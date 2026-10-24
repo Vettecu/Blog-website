@@ -1,2 +1,3 @@
 # Blog-website
-A small web project to learn how to code html, css and the python flask module.
+To run the website on a local host, just run main.py (if you didn't know)
+to find specific posts, add a /post/(id number) in the link
