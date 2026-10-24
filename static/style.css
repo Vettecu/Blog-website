@@ -1,0 +1,306 @@
+:root{
+    --ink: #14171c;
+    --ink-soft: #1b1f26;
+    --paper: #ffffff;
+    --text-body: #2b2f36;
+    --text-muted: #6b7280;
+    --text-on-ink: #f3f4f2;
+    --text-on-ink-muted: #9ca3af;
+    --accent: #2e6f60;
+    --accent-hover: #24594d;
+    --accent-soft: #e7efec;
+    --danger: #c4533d;
+    --danger-soft: #f6e9e6;
+    --border: #e5e7eb;
+    --radius: 6px;
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+}
+
+body{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--ink);
+    color: var(--text-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 48px 20px;
+}
+
+h1, h2{
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+h1{
+    font-size: 42px;
+    color: var(--text-on-ink);
+    text-align: center;
+    margin-bottom: var(--space-4);
+}
+
+.blog{
+    margin: auto;
+    max-width: 700px;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.message{
+    color: var(--danger);
+    background-color: var(--danger-soft);
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+}
+
+.card{
+    padding: var(--space-3);
+    margin-bottom: var(--space-2);
+    background-color: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.card h2{
+    font-size: 22px;
+}
+
+.card h2 a{
+    color: var(--text-body);
+    text-decoration: none;
+}
+
+.card h2 a:hover{
+    color: var(--accent);
+}
+
+.card p{
+    color: var(--text-muted);
+}
+
+form{
+    background-color: var(--paper);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin: auto;
+    max-width: 500px;
+}
+
+label{
+    display: block;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-2);
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    border-color: var(--accent);
+}
+
+button{
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+button:hover{
+    background-color: var(--accent-hover);
+}
+
+.buttons{
+    text-align: right;
+    margin-right: 0;
+    margin-bottom: var(--space-3);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn{
+    display: inline-block;
+    color: var(--ink);
+    background-color: var(--text-on-ink);
+    text-decoration: none;
+    margin-left: var(--space-2);
+    padding: 9px 18px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.15s ease;
+}
+
+.btn:hover{
+    opacity: 0.85;
+}
+
+.btn-secondary{
+    background-color: transparent;
+    color: var(--text-on-ink);
+    border: 1px solid var(--text-on-ink-muted);
+}
+
+.btn-secondary:hover{
+    background-color: rgba(255, 255, 255, 0.08);
+    opacity: 1;
+}
+
+.post{
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: var(--space-4);
+    padding: var(--space-4);
+    background-color: var(--paper);
+    border-radius: var(--radius);
+}
+
+.post h1{
+    font-size: 32px;
+    color: var(--text-body);
+    text-align: left;
+    margin-bottom: var(--space-2);
+}
+
+.post > p{
+    color: var(--text-body);
+}
+
+.author{
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.post-meta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-3);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
+}
+
+.post-meta form,
+.comment-header form{
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+}
+
+.post-meta button{
+    background: none;
+    color: var(--danger);
+    padding: 4px 0;
+    font-size: 13px;
+}
+
+.post-meta button:hover{
+    text-decoration: underline;
+    background: none;
+}
+
+.comments-section{
+    max-width: 700px;
+    margin: auto;
+}
+
+.comments-section h2{
+    color: var(--text-on-ink);
+    font-size: 22px;
+    margin-bottom: var(--space-2);
+}
+
+.comment-form{
+    margin-bottom: var(--space-3);
+}
+
+.comment-form textarea{
+    resize: vertical;
+    min-height: 60px;
+}
+
+.comment-list{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.comment{
+    background-color: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+}
+
+.comment-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+.comment-author{
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.comment-text{
+    margin: 0;
+    color: var(--text-body);
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.comment-delete{
+    background: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: 0;
+}
+
+.comment-delete:hover{
+    background: none;
+    color: var(--danger);
+    text-decoration: underline;
+}
+
+.no-comments{
+    color: var(--text-on-ink-muted);
+    text-align: center;
+    padding: var(--space-2) 0;
+}
