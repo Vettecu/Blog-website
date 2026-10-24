@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="post">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <div class="post-meta">
+            <span class="author">By: {{ post.username }}</span>
+            {% if current_user.is_authenticated and current_user.username == post.username %}
+                <form method="POST"
+                      action="{{ url_for('delete_post', post_id=post.id) }}">
+                        <button type="submit">Delete</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="comments-section">
+        <h2>Comments</h2>
+
+        {% if current_user.is_authenticated %}
+            <form class="comment-form" method="POST" action="{{ url_for('post', post_id=post.id) }}">
+                <label>Add a comment</label>
+                <textarea name="content" rows="3" required></textarea>
+                <button type="submit">Post Comment</button>
+            </form>
+        {% endif %}
+
+        <div class="comment-list">
+            {% for comment in comments %}
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">{{ comment.username }}</span>
+                    {% if current_user.is_authenticated and current_user.username == comment.username %}
+                        <form method="POST"
+                              action="{{ url_for('delete_comment', comment_id=comment.id) }}">
+                            <button type="submit" class="comment-delete">Delete</button>
+                        </form>
+                    {% endif %}
+                </div>
+                <p class="comment-text">{{ comment.content }}</p>
+            </div>
+            {% else %}
+                <p class="no-comments">No comments yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
